@@ -13,11 +13,11 @@ function renderInfo(country) {
 
   strHTML += `
           <pre>
-      Name: ${country.name.common}
-      Population: ${country.population}
-      Flag: <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="50">
-      Neighbors: ${neighbors}
-          </pre>
+    <h2>${country.name.common}</h2>
+      <p>Population: ${country.population}</p>
+      <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" >
+     <p> Neighbors: ${neighbors}</p>
+          
       `
 
   elInfoCon.innerHTML = strHTML
