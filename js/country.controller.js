@@ -5,8 +5,11 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(country) {
+  console.log('country', country)
   const elInfoCon = document.querySelector('.info')
-
+  const googleMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+    country.name.common
+  )}`
   const neighbors = country.borders
     ? country.borders.join(', ')
     : 'No neighbors'
@@ -15,8 +18,10 @@ function renderInfo(country) {
   strHTML += `
         
     <h2>${country.name.common}</h2>
+    
       <p>Population: ${country.population}</p>
-      <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" >
+      <a href="${googleMapsUrl}"><img src="${country.flags.svg}" alt="Flag of ${country.name.common}"></a>
+      
      <p> Neighbors: ${neighbors}</p>
           
       `
