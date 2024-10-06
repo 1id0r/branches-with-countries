@@ -16,13 +16,17 @@
     <h1>Countries</h1>
     <input type="text" class="user-input" placeholder="Enter country name">
     <button class="input-btn" onclick="onGetCountryInfo()">Search</button>
-    <div>
-        <pre></pre>
+    <div class="info">
+        <h2></h2>
+        <img src="" alt="">
+        <p></p>
     </div>
 
     <script src="lib/axios.js"></script>
 
     <script src="js/country.controller.js"></script>
+    <script src="js/services/country.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
 </body>
 
 </html>
