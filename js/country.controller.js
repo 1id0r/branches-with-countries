@@ -1,3 +1,9 @@
+function GetCountryInfo(ev) {
+  console.log('ev', ev)
+  ev.preventDefault()
+  onGetCountryInfo()
+}
+
 function onGetCountryInfo() {
   adjustDisplay('no-data')
   const countryName = document.querySelector('.user-input').value
@@ -26,7 +32,6 @@ function renderInfo(country) {
 }
 
 function adjustDisplay(status) {
-  console.log('status', status)
   const elInfoCon = document.querySelector('.info')
   const elNoData = document.querySelector('.loader')
 
