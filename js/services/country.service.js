@@ -22,3 +22,14 @@ function clearCache() {
   localStorage.clear()
   alert('Cache cleared!')
 }
+
+function getCountryByCode(code) {
+  console.log('code', code)
+  axios
+    .get(`https://restcountries.com/v3.1/alpha/${code}`)
+    .then((res) => {
+      console.log('res.data[0]', res.data[0])
+      renderInfo(res.data[0])
+    })
+    .catch((err) => console.log('err', err))
+}
