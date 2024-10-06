@@ -14,12 +14,15 @@
 
 <body>
     <h1>Countries</h1>
-    <input type="text" class="user-input" value="israel" placeholder="Enter country name">
+    <form class="input-form" onsubmit="GetCountryInfo(event)">
+        <input type="text" class="user-input" onsubmit="onGetCountryInfo()" value="israel"
+            placeholder="Enter country name">
+    </form>
     <button class="input-btn" onclick="onGetCountryInfo()">Search</button>
     <button class="clear-btn" onclick="clearCache()">Clear cache</button>
     <img class="loader hidden" src="img/loader.svg" alt="">
+
     <div class="info hidden">
-        <button onclick="" class=""></button>
 
     </div>
 

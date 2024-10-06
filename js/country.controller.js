@@ -1,3 +1,9 @@
+function GetCountryInfo(ev) {
+  console.log('ev', ev)
+  ev.preventDefault()
+  onGetCountryInfo()
+}
+
 function onGetCountryInfo() {
   adjustDisplay('no-data')
   const countryName = document.querySelector('.user-input').value
@@ -5,8 +11,11 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(country) {
+  console.log('country', country)
   const elInfoCon = document.querySelector('.info')
-  //   console.log('country', country)
+  const googleMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+    country.name.common
+  )}` //   console.log('country', country)
   let neighborsHTML = 'No neighbors'
   if (country.borders && country.borders.length > 0) {
     neighborsHTML = country.borders
@@ -18,9 +27,12 @@ function renderInfo(country) {
   let strHTML = ''
   strHTML += `
     <h2>${country.name.common}</h2>
+    
       <p>Population: ${country.population}</p>
-      <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" >
-     <p> Neighbors: ${neighborsHTML}</p>   
+      <a href="${googleMapsUrl}"><img src="${country.flags.svg}" alt="Flag of ${country.name.common}"></a>
+      
+     <p> Neighbors: ${neighbors}</p>
+          
       `
 
   elInfoCon.innerHTML = strHTML
@@ -28,7 +40,6 @@ function renderInfo(country) {
 }
 
 function adjustDisplay(status) {
-  console.log('status', status)
   const elInfoCon = document.querySelector('.info')
   const elNoData = document.querySelector('.loader')
 
