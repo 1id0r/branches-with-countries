@@ -3,9 +3,25 @@
 function onGetCountryInfo() {
   const countryName = document.querySelector('.user-input').value
   console.log('countryName', countryName)
-  renderInfo()
+  getCountryByName(countryName)
 }
 
-function renderInfo(data) {
-  console.log('Rendering...')
+function renderInfo(country) {
+  const elInfoCon = document.querySelector('.info')
+  let strHTML = ''
+
+  const neighbors = country.borders
+    ? country.borders.join(', ')
+    : 'No neighbors'
+
+  strHTML += `
+        <pre>
+Name: ${country.name.common}
+Population: ${country.population}
+Flag: <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="50">
+Neighbors: ${neighbors}
+        </pre>
+    `
+
+  elInfoCon.innerHTML = strHTML
 }
