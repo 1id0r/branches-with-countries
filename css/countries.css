@@ -74,4 +74,11 @@ p{
     color: #333;
 }
 
+.loader {
+    display: block;
+    margin: 100px auto;
+}
 
+.hidden {
+    display: none;
+}

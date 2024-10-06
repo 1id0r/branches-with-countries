@@ -1,16 +1,17 @@
 function onGetCountryInfo() {
+  adjustDisplay('no-data')
   const countryName = document.querySelector('.user-input').value
   getCountryByName(countryName)
 }
 
 function renderInfo(country) {
   const elInfoCon = document.querySelector('.info')
-  let strHTML = ''
 
   const neighbors = country.borders
     ? country.borders.join(', ')
     : 'No neighbors'
 
+  let strHTML = ''
   strHTML += `
         
     <h2>${country.name.common}</h2>
@@ -21,4 +22,23 @@ function renderInfo(country) {
       `
 
   elInfoCon.innerHTML = strHTML
+  adjustDisplay('info')
+}
+
+function adjustDisplay(status) {
+  console.log('status', status)
+  const elInfoCon = document.querySelector('.info')
+  const elNoData = document.querySelector('.loader')
+
+  elInfoCon.classList.add('hidden')
+  elNoData.classList.add('hidden')
+
+  switch (status) {
+    case 'info':
+      elInfoCon.classList.remove('hidden')
+      break
+    case 'no-data':
+      elNoData.classList.remove('hidden')
+      break
+  }
 }
