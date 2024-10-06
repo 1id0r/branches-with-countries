@@ -12,7 +12,7 @@ function renderInfo(country) {
     : 'No neighbors'
 
   strHTML += `
-          <pre>
+        
     <h2>${country.name.common}</h2>
       <p>Population: ${country.population}</p>
       <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" >
