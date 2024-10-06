@@ -16,10 +16,10 @@ function renderInfo(country) {
 
   strHTML += `
         <pre>
-Name: ${country.name.common}
-Population: ${country.population}
-Flag: <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="50">
-Neighbors: ${neighbors}
+    Name: ${country.name.common}
+    Population: ${country.population}
+    Flag: <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="50">
+    Neighbors: ${neighbors}
         </pre>
     `
 
