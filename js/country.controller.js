@@ -1,5 +1,3 @@
-'use strict'
-
 function onGetCountryInfo() {
   const countryName = document.querySelector('.user-input').value
   getCountryByName(countryName)
@@ -14,13 +12,13 @@ function renderInfo(country) {
     : 'No neighbors'
 
   strHTML += `
-        <pre>
-    Name: ${country.name.common}
-    Population: ${country.population}
-    Flag: <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="50">
-    Neighbors: ${neighbors}
-        </pre>
-    `
+          <pre>
+      Name: ${country.name.common}
+      Population: ${country.population}
+      Flag: <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" width="50">
+      Neighbors: ${neighbors}
+          </pre>
+      `
 
   elInfoCon.innerHTML = strHTML
 }
