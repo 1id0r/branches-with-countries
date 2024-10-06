@@ -2,7 +2,6 @@
 
 function onGetCountryInfo() {
   const countryName = document.querySelector('.user-input').value
-  console.log('countryName', countryName)
   getCountryByName(countryName)
 }
 
