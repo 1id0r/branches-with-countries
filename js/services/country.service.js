@@ -18,3 +18,7 @@ function getCountryByName(name) {
       .catch((err) => console.log('err', err))
   }
 }
+function clearCache() {
+  localStorage.clear()
+  alert('Cache cleared!')
+}
