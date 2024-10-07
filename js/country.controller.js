@@ -31,7 +31,7 @@ function renderInfo(country) {
       <p>Population: ${country.population}</p>
       <a href="${googleMapsUrl}"><img src="${country.flags.svg}" alt="Flag of ${country.name.common}"></a>
       
-     <p> Neighbors: ${neighbors}</p>
+     <p> Neighbors: ${neighborsHTML}</p>
           
       `
 
